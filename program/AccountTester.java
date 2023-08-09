@@ -1,4 +1,3 @@
-// mainメソッドを含むAccountTesterクラスを書く
 class AccountTester {
 
     public static void main(String[] args) {
