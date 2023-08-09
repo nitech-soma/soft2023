@@ -2,13 +2,15 @@ class Account {
     private String name = "a";
     private String no = "1";
     private long balance = 0;
+    private long timeBalance;
     private Day openDate;
 
-    public Account(String n, String num, long z, Day d) {
-        name = n;
-        no = num;
-        balance = z;
-        openDate = new Day(d);
+    public Account(String name, String no, long balance, long timeBalance, Day day) {
+        this.name = name;
+        this.no = no;
+        this.balance = balance;
+        this.timeBalance = timeBalance;
+        openDate = new Day(day);
     }
 
     public String getName() {
@@ -21,6 +23,10 @@ class Account {
 
     public long getBalance() {
         return balance;
+    }
+
+    long getTimeBalance() {
+        return timeBalance;
     }
 
     public Day getOpenDate() {
@@ -53,5 +59,23 @@ class Account {
     public String toString() {
         return String.format("口座名義：%s%n口座番号：%s%n預金残高：%d円%n開設日：%04d年%02d月%02d日", name, no, balance, openDate.getYear(),
                 openDate.getMonth(), openDate.getDate());
+    }
+
+    void deposit(long k) {
+        balance += k;
+    }
+
+    void withdraw(long k) {
+        balance -= k;
+    }
+
+    void cancel() {
+        deposit(timeBalance);
+        timeBalance = 0;
+    }
+
+    void switchBalance(long k) {
+        withdraw(k);
+        timeBalance += k;
     }
 }
