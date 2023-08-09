@@ -71,7 +71,11 @@ class Account {
     }
 
     void withdraw(long k) {
-        balance -= k;
+        if(balance < k) {
+            System.out.println("引き出す額が預金額よりも多いため、引き出せませんでした。");
+        } else {
+            balance -= k;
+        }
     }
 
     void cancel() {
@@ -80,7 +84,11 @@ class Account {
     }
 
     void switchBalance(long k) {
-        withdraw(k);
-        timeBalance += k;
+        if(balance < k) {
+            System.out.println("定期預金しようとしている額が預金額よりも多いため、定期預金できませんでした。");
+        } else {
+            withdraw(k);
+            timeBalance += k;
+        }
     }
 }

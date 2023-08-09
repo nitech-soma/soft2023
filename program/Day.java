@@ -1,9 +1,9 @@
 import java.util.Calendar;
 
 public class Day {
-    private int year = 1;
-    private int month = 1;
-    private int date = 1;
+    private int year;
+    private int month;
+    private int date;
 
     public Day() {
         Calendar calendar = Calendar.getInstance();
