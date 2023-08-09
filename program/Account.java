@@ -1,16 +1,16 @@
 class Account {
-    private String name = "a";
-    private String no = "1";
-    private long balance = 0;
+    private String name;
+    private String no;
+    private long balance;
     private long timeBalance;
     private Day openDate;
 
-    public Account(String name, String no, long balance, long timeBalance, Day day) {
+    public Account(String name, String no, long timeBalance) {
         this.name = name;
         this.no = no;
-        this.balance = balance;
-        this.timeBalance = timeBalance;
-        openDate = new Day(day);
+        this.balance = 0;
+        this.timeBalance = 0;
+        openDate = new Day();
     }
 
     public String getName() {
@@ -45,14 +45,19 @@ class Account {
         this.balance = balance;
     }
 
+     public void setTimeBalance(long timeBalance) {
+        this.timeBalance = timeBalance;
+    }
+
     public void setOpenDate(Day openDate) {
         this.openDate = new Day(openDate);
     }
 
-    public void set(String name, String no, long balance, Day openDay) {
+    public void set(String name, String no, long balance, long timeBalance, Day openDay) {
         this.name = name;
         this.no = no;
         this.balance = balance;
+        this.timeBalance = timeBalance;
         this.openDate = new Day(openDay);
     }
 

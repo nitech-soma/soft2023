@@ -1,9 +1,16 @@
+import java.util.Calendar;
+
 public class Day {
     private int year = 1;
     private int month = 1;
     private int date = 1;
 
     public Day() {
+        Calendar calendar = Calendar.getInstance();
+
+        this.year = calendar.get(Calendar.YEAR);
+        this.month = calendar.get(Calendar.MONTH);
+        this.date = calendar.get(Calendar.DAY_OF_MONTH);
     }
 
     public Day(int year) {
