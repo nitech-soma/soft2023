@@ -5,7 +5,7 @@ class Account {
     private long timeBalance;
     private Day openDate;
 
-    public Account(String name, String no, long timeBalance) {
+    public Account(String name, String no) {
         this.name = name;
         this.no = no;
         this.balance = 0;
