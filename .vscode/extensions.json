@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "ms-ceintl.vscode-language-pack-ja",
+        "visualstudioexptteam.vscodeintellicode",
+        "vscjava.vscode-java-pack",
+    ]
+}
