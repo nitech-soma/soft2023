@@ -1,3 +1,5 @@
+package program;
+
 class Account {
     private String name;
     private String no;
@@ -45,7 +47,7 @@ class Account {
         this.balance = balance;
     }
 
-     public void setTimeBalance(long timeBalance) {
+    public void setTimeBalance(long timeBalance) {
         this.timeBalance = timeBalance;
     }
 
@@ -62,7 +64,8 @@ class Account {
     }
 
     public String toString() {
-        return String.format("口座名義：%s%n口座番号：%s%n預金残高：%d円%n開設日：%04d年%02d月%02d日", name, no, balance, openDate.getYear(),
+        return String.format("口座名義  ：%s%n口座番号  ：%s%n預金残高  ：%d円%n定期預金額：%d円%n開設日    ：%04d年%02d月%02d日", name, no, balance,
+                timeBalance, openDate.getYear(),
                 openDate.getMonth(), openDate.getDate());
     }
 
@@ -71,7 +74,7 @@ class Account {
     }
 
     void withdraw(long k) {
-        if(balance < k) {
+        if (balance < k) {
             System.out.println("引き出す額が預金額よりも多いため、引き出せませんでした。");
         } else {
             balance -= k;
@@ -84,7 +87,7 @@ class Account {
     }
 
     void switchBalance(long k) {
-        if(balance < k) {
+        if (balance < k) {
             System.out.println("定期預金しようとしている額が預金額よりも多いため、定期預金できませんでした。");
         } else {
             withdraw(k);
