@@ -1,19 +1,11 @@
 
-# Dockerのjavaサンプルコード
+# 銀行口座アカウント
 
-実行コマンド
+## Account.java
+アカウント本体のクラス
 
-```bash
-docker build -t myjava:openjdk .
-docker run -it --rm -v ${PWD}:/mnt myjava:openjdk javac Main.java
-docker run -it --rm -v ${PWD}:/mnt myjava:openjdk java Main
-```
+## Day.java
+日付についてのクラス
 
-もしくは
-
-```bash
-docker compose up -d
-docker compose exec myjava javac Main.java
-docker compose exec myjava java Main
-docker compose down
-```
+## ReadAndWrite.java
+ファイルの操作を行うクラス（ファイルはdata以下に保存する）
